@@ -1,5 +1,5 @@
-import React, {component} from 'react';
-class ShipAddress extends component {
+import React, {Component} from 'react';
+class ShipAddress extends Component {
     continue =  e => {
         e.preventDefault();
         this.props.nextStep();

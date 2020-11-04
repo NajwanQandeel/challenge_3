@@ -1,8 +1,9 @@
-import React, {component} from 'react';
+import React, {Component} from 'react';
 import PersonalInfo from './PersonalInfo';
 import ShipAddress from './ShipAddress';
+import AllInfo from './AllInfo';
      
-class Main extends component {
+class Main extends Component {
     state = {
         step1: 1,
 
@@ -22,7 +23,7 @@ class Main extends component {
         //step3
         CreditCardExpiryDate: "",
         CreditCardCCV: "",
-        PilingZipCode: "",
+        PilingZipCode: ""
     }
 
   nextStep = () => {
@@ -40,7 +41,7 @@ class Main extends component {
   }
 
 
-  handleChange = (e) => {
+  handleChange = input => e => {
   this.setState({[input]: e.target.value})
   }
   showStep = () => {
@@ -66,6 +67,20 @@ class Main extends component {
                 PhoneNumber = {PhoneNumber}
             />);
         }
+      if(step === 3){
+          return (
+              <AllInfo
+              FullName = {FullName}
+              Email = {Email}
+              Password = {Password}
+              City = {City}
+              State = {State}
+              ZipCode = {ZipCode}
+              PhoneNumber = {PhoneNumber}
+              prevStep = {this.prevStep}
+              />
+          );
+      }
   }
 
 

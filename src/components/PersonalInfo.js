@@ -1,6 +1,6 @@
-import React, {component} from 'react';
+import React, {Component} from 'react';
 
-class PersonalInfo extends component {
+class PersonalInfo extends Component {
     continue =  e => {
         e.preventDefault();
         this.props.nextStep();
@@ -32,7 +32,7 @@ class PersonalInfo extends component {
                   onChange ={handleChange('Password')} />
             </label>
             <button className = "Next" onClick= {this.continue}>
-            Next >>
+            Next
             </button>
             </>
         );
